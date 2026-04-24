@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA Tunis 2026 · Fiche participant · Enseignants universitaires</title>
+<style>
+  :root {
+    --primary: #8B1E3F;
+    --primary-dark: #5e1429;
+    --accent: #D4A574;
+    --bg: #FAF7F2;
+    --card: #FFFFFF;
+    --text: #2A2A2A;
+    --muted: #6B6B6B;
+    --border: #E5DFD4;
+    --j1: #8B1E3F;
+    --j2: #3E6B89;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 3rem 1.5rem;
+    text-align: center;
+  }
+  .header h1 { font-size: 2rem; margin-bottom: 0.5rem; font-weight: 700; }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.95; margin-bottom: 1rem; }
+  .header .meta { display: inline-block; background: rgba(255,255,255,0.15); padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.9rem; margin: 0.2rem; }
+  .badge-participant {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary-dark);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+  .event-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; }
+  nav.toc {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  nav.toc ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  nav.toc a {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background: var(--bg);
+    border-radius: 20px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  nav.toc a:hover { background: var(--primary); color: white; }
+  section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+  h2 {
+    color: var(--primary);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--accent);
+  }
+  h3 {
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.8rem 0;
+  }
+  p { margin-bottom: 0.8rem; }
+  ul, ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+  li { margin-bottom: 0.4rem; }
+
+  .card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .programme-item {
+    background: var(--card);
+    border-left: 4px solid var(--j1);
+    border-radius: 4px;
+    padding: 0.9rem 1.2rem;
+    margin-bottom: 0.6rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  .j2 .programme-item { border-left-color: var(--j2); }
+  .programme-item .intitule { font-weight: 600; color: var(--text); flex: 1; min-width: 200px; }
+  .programme-item .horaire { color: var(--muted); font-size: 0.9rem; font-weight: 600; min-width: 110px; }
+  .programme-item .duree {
+    background: var(--accent);
+    color: var(--primary-dark);
+    padding: 0.2rem 0.7rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .j2 .programme-item .duree { background: #D4E0EB; color: var(--j2); }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .tool {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+  .tool:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+  .tool-name { font-weight: 700; font-size: 1.05rem; color: var(--primary); margin-bottom: 0.3rem; }
+  .tool-desc { font-size: 0.85rem; color: var(--muted); }
+
+  .prompt-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .prompt-header {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .prompt-title { font-weight: 600; font-size: 1rem; }
+  .prompt-use { font-size: 0.8rem; opacity: 0.9; background: rgba(255,255,255,0.2); padding: 0.2rem 0.7rem; border-radius: 10px; }
+
+  .lang-toggle {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    background: #FCFAF6;
+  }
+  .lang-btn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .lang-btn.active {
+    background: white;
+    color: var(--primary);
+    border-bottom: 3px solid var(--accent);
+  }
+  .lang-btn:hover:not(.active) { background: var(--bg); }
+
+  .prompt-body {
+    padding: 1.2rem;
+    font-family: "Courier New", monospace;
+    font-size: 0.88rem;
+    background: #FCFAF6;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: #3A3A3A;
+    display: none;
+  }
+  .prompt-body.active { display: block; }
+  .prompt-body[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+    font-family: "Traditional Arabic", "Amiri", "Scheherazade New", Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+
+  .copy-btn {
+    background: var(--accent);
+    color: var(--primary-dark);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0.8rem 1.2rem;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .copy-btn:hover { background: var(--primary); color: white; }
+  .copy-btn.copied { background: #4CAF50; color: white; }
+
+  .doc-sample {
+    background: #FCFAF6;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    font-family: Georgia, serif;
+    font-size: 0.92rem;
+  }
+  .doc-sample h4 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.05rem; }
+  .doc-sample .meta-doc { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.8rem; font-style: italic; }
+
+  .qr-section {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    border: 2px dashed var(--accent);
+  }
+  #qrcode { display: inline-block; padding: 1rem; background: white; border-radius: 4px; }
+  .url-share {
+    display: inline-block;
+    background: var(--bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: monospace;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    word-break: break-all;
+  }
+
+  .action-plan {
+    background: linear-gradient(135deg, #FFF9F0 0%, #FCF4E5 100%);
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .action-plan ol { margin-left: 1.2rem; }
+  .action-plan li { margin-bottom: 1rem; }
+  .action-plan strong { color: var(--primary); }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+
+  /* ========== TABLETTE (max 900px) ========== */
+  @media (max-width: 900px) {
+    .container { padding: 1.2rem 1rem; }
+    .header { padding: 2rem 1rem; }
+    .header h1 { font-size: 1.6rem; }
+    .header .subtitle { font-size: 1rem; }
+    .header .meta { font-size: 0.82rem; padding: 0.35rem 0.8rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.1rem; }
+  }
+
+  /* ========== MOBILE (max 600px) ========== */
+  @media (max-width: 600px) {
+    body { font-size: 15px; }
+    .container { padding: 1rem 0.8rem; }
+    .header { padding: 1.5rem 0.8rem; }
+    .header h1 { font-size: 1.4rem; line-height: 1.3; }
+    .header .subtitle { font-size: 0.95rem; }
+    .header .meta {
+      display: block;
+      margin: 0.3rem auto;
+      max-width: 260px;
+      font-size: 0.8rem;
+    }
+    .badge-participant { font-size: 0.8rem; padding: 0.3rem 0.8rem; }
+
+    /* Navigation horizontale scrollable au lieu d'une liste verticale qui prend tout l'ecran */
+    nav.toc {
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    nav.toc ul {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      gap: 0.4rem;
+      padding-bottom: 0.3rem;
+    }
+    nav.toc ul::-webkit-scrollbar { height: 3px; }
+    nav.toc ul::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+    nav.toc a {
+      white-space: nowrap;
+      font-size: 0.82rem;
+      padding: 0.5rem 0.8rem;
+      flex-shrink: 0;
+    }
+
+    section { margin-bottom: 2rem; }
+    h2 { font-size: 1.25rem; padding-bottom: 0.4rem; }
+    h3 { font-size: 1.05rem; }
+
+    .card { padding: 1rem; }
+
+    /* Programme : empilement propre */
+    .programme-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.9rem 1rem;
+      gap: 0.5rem;
+    }
+    .programme-item .horaire {
+      font-size: 0.85rem;
+      min-width: 0;
+      order: 1;
+    }
+    .programme-item .intitule {
+      font-size: 0.98rem;
+      order: 2;
+      min-width: 0;
+      width: 100%;
+    }
+    .programme-item .duree {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      order: 3;
+      align-self: flex-start;
+    }
+
+    /* Outils : une colonne sur mobile */
+    .tools-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+    .tool { padding: 1rem; }
+
+    /* Prompts : ergonomie tactile */
+    .prompt-card { border-radius: 6px; margin-bottom: 0.8rem; }
+    .prompt-header {
+      padding: 0.7rem 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+    .prompt-title { font-size: 0.95rem; }
+    .prompt-use { font-size: 0.72rem; padding: 0.15rem 0.6rem; }
+
+    /* Boutons langue : tap-friendly (44px minimum) */
+    .lang-btn {
+      padding: 0.75rem 1rem;
+      min-height: 44px;
+      font-size: 0.88rem;
+    }
+
+    /* Corps du prompt : lisibilite mobile */
+    .prompt-body {
+      padding: 1rem;
+      font-size: 0.85rem;
+      line-height: 1.55;
+    }
+    .prompt-body[lang="ar"] {
+      font-size: 1.05rem;
+      line-height: 2;
+    }
+
+    /* Bouton copier : large et visible */
+    .copy-btn {
+      display: block;
+      width: calc(100% - 2rem);
+      margin: 0.8rem 1rem;
+      padding: 0.9rem 1rem;
+      min-height: 48px;
+      font-size: 0.95rem;
+      border-radius: 6px;
+    }
+
+    /* Documents exemples */
+    .doc-sample {
+      padding: 1rem;
+      font-size: 0.88rem;
+    }
+    .doc-sample h4 { font-size: 0.98rem; }
+    .doc-sample ul { margin-left: 1.2rem; }
+
+    /* QR code */
+    .qr-section { padding: 1.2rem 1rem; }
+    #qrcode { padding: 0.6rem; }
+    .url-share {
+      display: block;
+      font-size: 0.75rem;
+      padding: 0.5rem 0.8rem;
+      word-break: break-all;
+    }
+
+    /* Plan d'action */
+    .action-plan { padding: 1.2rem 1rem; }
+    .action-plan ol { margin-left: 1rem; }
+    .action-plan li { margin-bottom: 0.8rem; font-size: 0.92rem; }
+
+    footer { padding: 1.5rem 1rem; font-size: 0.82rem; }
+  }
+
+  /* ========== TRES PETIT MOBILE (max 380px) ========== */
+  @media (max-width: 380px) {
+    .header h1 { font-size: 1.2rem; }
+    h2 { font-size: 1.1rem; }
+    .prompt-body { font-size: 0.8rem; }
+    .prompt-body[lang="ar"] { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="event-tag">IA Tunis 2026</div>
+  <h1>IA en contexte universitaire</h1>
+  <p class="subtitle">Initiation critique et applications concrètes</p>
+  <div>
+    <span class="meta">29 avril 2026 (après-midi)</span>
+    <span class="meta">30 avril 2026 (journée)</span>
+  </div>
+  <div class="badge-participant">Fiche participant</div>
+</header>
+
+<div class="container">
+
+<nav class="toc">
+  <ul>
+    <li><a href="#objectifs">Objectifs</a></li>
+    <li><a href="#programme">Programme</a></li>
+    <li><a href="#outils">Outils</a></li>
+    <li><a href="#documents">Documents exemples</a></li>
+    <li><a href="#prompts">Prompts (FR / AR)</a></li>
+    <li><a href="#plan">Plan d'action</a></li>
+    <li><a href="#partage">Partager</a></li>
+  </ul>
+</nav>
+
+<section id="objectifs">
+  <h2>Objectifs de la formation</h2>
+  <div class="card">
+    <p>À l'issue de ces deux demi-journées et demie, vous serez capable de :</p>
+    <ul>
+      <li>Distinguer les catégories d'IA génératives et identifier leurs usages pertinents dans votre pratique d'enseignement</li>
+      <li>Construire des prompts efficaces adaptés à vos situations concrètes</li>
+      <li>Utiliser NotebookLM pour transformer vos ressources pédagogiques en supports exploitables</li>
+      <li>Évaluer les avantages et les limites de l'IA dans votre discipline</li>
+      <li>Concevoir un cas d'usage intégrable à un cours dès la semaine suivante</li>
+    </ul>
+  </div>
+</section>
+
+<section id="programme">
+  <h2>Programme</h2>
+
+  <h3 style="color: var(--j1);">Jour 1 · 29 avril · Après-midi</h3>
+  <div class="programme-item">
+    <span class="horaire">13h30 - 14h00</span>
+    <span class="intitule">Accueil et tour de table</span>
+    <span class="duree">30 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">14h00 - 14h30</span>
+    <span class="intitule">Cartographie collective des irritants pédagogiques</span>
+    <span class="duree">30 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">14h30 - 15h00</span>
+    <span class="intitule">Comment fonctionne une IA générative</span>
+    <span class="duree">30 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">15h00 - 15h15</span>
+    <span class="intitule">Pause</span>
+    <span class="duree">15 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">15h15 - 16h00</span>
+    <span class="intitule">IA et pédagogie : avantages, limites, posture critique</span>
+    <span class="duree">45 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">16h00 - 16h45</span>
+    <span class="intitule">Les quatre techniques fondamentales du prompting</span>
+    <span class="duree">45 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">16h45 - 17h15</span>
+    <span class="intitule">Atelier prompting en binômes</span>
+    <span class="duree">30 min</span>
+  </div>
+  <div class="programme-item">
+    <span class="horaire">17h15 - 17h30</span>
+    <span class="intitule">Bilan du jour 1</span>
+    <span class="duree">15 min</span>
+  </div>
+
+  <h3 class="j2" style="color: var(--j2); margin-top: 2rem;">Jour 2 · 30 avril · Journée complète</h3>
+  <div class="j2">
+    <div class="programme-item">
+      <span class="horaire">09h00 - 09h30</span>
+      <span class="intitule">Retour d'expérience sur la soirée</span>
+      <span class="duree">30 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">09h30 - 10h00</span>
+      <span class="intitule">NotebookLM : démonstration live</span>
+      <span class="duree">30 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">10h00 - 11h00</span>
+      <span class="intitule">Atelier NotebookLM guidé</span>
+      <span class="duree">60 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">11h00 - 11h15</span>
+      <span class="intitule">Pause</span>
+      <span class="duree">15 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">11h15 - 12h00</span>
+      <span class="intitule">Cas d'usage côté étudiant</span>
+      <span class="duree">45 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">12h00 - 12h45</span>
+      <span class="intitule">Analyse critique des outputs IA</span>
+      <span class="duree">45 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">12h45 - 13h45</span>
+      <span class="intitule">Pause déjeuner</span>
+      <span class="duree">60 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">13h45 - 15h15</span>
+      <span class="intitule">Atelier conception d'une séquence</span>
+      <span class="duree">90 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">15h15 - 15h30</span>
+      <span class="intitule">Pause</span>
+      <span class="duree">15 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">15h30 - 16h15</span>
+      <span class="intitule">Présentations express et feedback</span>
+      <span class="duree">45 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">16h15 - 16h45</span>
+      <span class="intitule">Plan d'action individuel</span>
+      <span class="duree">30 min</span>
+    </div>
+    <div class="programme-item">
+      <span class="horaire">16h45 - 17h00</span>
+      <span class="intitule">Clôture</span>
+      <span class="duree">15 min</span>
+    </div>
+  </div>
+</section>
+
+<section id="outils">
+  <h2>Boîte à outils</h2>
+  <p>Les outils utilisés durant la formation. Privilégier les versions gratuites, un compte Google suffit pour la plupart.</p>
+  <div class="tools-grid">
+    <a href="https://notebooklm.google.com" target="_blank" class="tool">
+      <div class="tool-name">NotebookLM</div>
+      <div class="tool-desc">Analyse documentaire, podcast, fiches de synthèse</div>
+    </a>
+    <a href="https://claude.ai" target="_blank" class="tool">
+      <div class="tool-name">Claude</div>
+      <div class="tool-desc">IA conversationnelle, qualité rédactionnelle</div>
+    </a>
+    <a href="https://chat.openai.com" target="_blank" class="tool">
+      <div class="tool-name">ChatGPT</div>
+      <div class="tool-desc">IA conversationnelle polyvalente</div>
+    </a>
+    <a href="https://copilot.microsoft.com" target="_blank" class="tool">
+      <div class="tool-name">Copilot</div>
+      <div class="tool-desc">Assistant IA de Microsoft</div>
+    </a>
+    <a href="https://gemini.google.com" target="_blank" class="tool">
+      <div class="tool-name">Gemini</div>
+      <div class="tool-desc">IA conversationnelle multimodale de Google</div>
+    </a>
+    <a href="https://chat.mistral.ai" target="_blank" class="tool">
+      <div class="tool-name">Le Chat (Mistral)</div>
+      <div class="tool-desc">IA conversationnelle française</div>
+    </a>
+  </div>
+</section>
+
+<section id="documents">
+  <h2>Documents exemples</h2>
+  <p>Trois documents types serviront de support aux ateliers. Ils couvrent différentes disciplines de l'enseignement supérieur tunisien.</p>
+
+  <div class="doc-sample">
+    <h4>Document 1 · Syllabus en économie du développement</h4>
+    <div class="meta-doc">Licence 2 · Faculté des Sciences Économiques et de Gestion</div>
+    <p><strong>Intitulé :</strong> Économie du développement et transition post-2011 en Tunisie</p>
+    <p><strong>Volume horaire :</strong> 42h (CM : 28h · TD : 14h)</p>
+    <p><strong>Prérequis :</strong> microéconomie, macroéconomie, notions de statistiques descriptives.</p>
+    <p><strong>Compétences visées :</strong></p>
+    <ul>
+      <li>Analyser les indicateurs de développement humain d'un pays en transition</li>
+      <li>Comparer les trajectoires économiques du Maghreb</li>
+      <li>Évaluer l'impact des réformes structurelles sur l'emploi des jeunes diplômés</li>
+      <li>Construire un diagnostic sectoriel (tourisme, phosphates, agriculture oléicole)</li>
+    </ul>
+    <p><strong>Plan :</strong> théories classiques du développement · spécificités de l'économie tunisienne · rôle des diasporas · intégration régionale · transformation numérique · défis environnementaux.</p>
+    <p><strong>Évaluation :</strong> contrôle continu 30% · dossier collectif 30% · examen final 40%.</p>
+  </div>
+
+  <div class="doc-sample">
+    <h4>Document 2 · Article de recherche en sciences de l'éducation</h4>
+    <div class="meta-doc">Article dense pour analyse avec NotebookLM · 12 pages</div>
+    <p><strong>Titre :</strong> L'intégration des technologies éducatives dans l'enseignement supérieur tunisien : état des lieux, freins et leviers (2015-2024)</p>
+    <p><strong>Résumé :</strong> Enquête menée auprès de 284 enseignants dans huit universités tunisiennes (Tunis El Manar, Carthage, Manouba, Sfax, Sousse, Gabès, Kairouan, Monastir). Trois configurations d'usage identifiées : adoption contrainte (38%), usage périphérique (45%), intégration réflexive (17%). Les principaux freins relèvent de l'infrastructure, de la formation initiale et du manque de temps dédié à la conception pédagogique.</p>
+    <p><strong>Mots-clés :</strong> technologies éducatives, université tunisienne, transformation numérique, adoption, communauté de pratique.</p>
+    <p><em>Document fictif à visée pédagogique. Le texte intégral est fourni en PDF le jour de la formation.</em></p>
+  </div>
+
+  <div class="doc-sample">
+    <h4>Document 3 · Extrait de cours en droit</h4>
+    <div class="meta-doc">Licence 3 · Faculté de Droit et des Sciences Politiques</div>
+    <p><strong>Chapitre :</strong> La Constitution de 2014 et ses évolutions : architecture institutionnelle et garanties des droits fondamentaux.</p>
+    <p><strong>Contenu :</strong> genèse du texte constitutionnel · séparation des pouvoirs · rôle de l'Assemblée des Représentants du Peuple · indépendance de la justice · instances constitutionnelles · droits et libertés · révisions postérieures · controverses doctrinales.</p>
+    <p><strong>Volume :</strong> 18 pages denses, références jurisprudentielles et doctrinales.</p>
+  </div>
+</section>
+
+<section id="prompts">
+  <h2>Bibliothèque de prompts</h2>
+  <p>Prompts prêts à l'emploi en français et en arabe. Basculer entre les deux langues avec les onglets, puis copier avec le bouton. Remplacer ensuite les variables entre crochets.</p>
+
+  <!-- Prompt 1 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">1 · Construire un plan de cours détaillé</span>
+      <span class="prompt-use">Préparation de cours</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant-chercheur expérimenté en [discipline] dans une université tunisienne. Construis un plan de cours détaillé pour une séance de [durée] sur le thème suivant : [thème].
+
+Contexte :
+- Public : étudiants de [niveau L1/L2/L3/Master]
+- Effectif : environ [nombre] étudiants
+- Prérequis des étudiants : [prérequis]
+- Contraintes matérielles : [salle classique / amphi / salle informatique]
+
+Structure attendue :
+1. Objectifs pédagogiques formulés avec les verbes de la taxonomie de Bloom (minimum 3 objectifs de niveaux différents)
+2. Plan séquencé avec minutage précis
+3. Activités d'apprentissage actif intégrées (au minimum 2)
+4. Moment de vérification de la compréhension en cours de séance
+5. Évaluation formative de fin de séance
+
+Adapte les exemples au contexte tunisien quand c'est pertinent.</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ باحث ذو خبرة في [التخصص] بجامعة تونسية. ابنِ مخططًا مفصلًا لدرس مدته [المدة] حول الموضوع التالي: [الموضوع].
+
+السياق:
+- الجمهور: طلبة [المستوى: السنة الأولى/الثانية/الثالثة/ماجستير]
+- العدد: حوالي [العدد] طالبًا
+- المتطلبات المسبقة للطلبة: [المتطلبات]
+- القيود المادية: [قاعة عادية / مدرج / قاعة إعلامية]
+
+البنية المطلوبة:
+1. الأهداف البيداغوجية مصاغة بأفعال تصنيف بلوم (ثلاثة أهداف على الأقل من مستويات مختلفة)
+2. مخطط متسلسل بتوقيت دقيق
+3. أنشطة تعلم نشط مدمجة (نشاطان على الأقل)
+4. لحظة تحقق من الفهم أثناء الحصة
+5. تقييم تكويني في نهاية الحصة
+
+كيّف الأمثلة مع السياق التونسي عند الاقتضاء.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 2 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">2 · Générer un QCM différencié (Bloom)</span>
+      <span class="prompt-use">Évaluation</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant universitaire en [discipline]. Génère un QCM de 15 questions pour évaluer la maîtrise des étudiants sur [sujet/chapitre].
+
+Consignes :
+- Répartir les questions par niveau de Bloom : 5 questions de mémorisation/compréhension, 5 questions d'application, 5 questions d'analyse
+- Fournir 4 propositions par question avec une seule bonne réponse
+- Indiquer la bonne réponse et la justification après chaque question
+- Adapter les exemples au contexte tunisien (cas, institutions, entreprises locales)
+- Varier les formulations : question directe, cas pratique, énoncé à compléter
+
+Public : étudiants en [niveau] ayant suivi [précision sur les contenus].
+Points forts habituels : [préciser].
+Points faibles habituels : [préciser].</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ جامعي في [التخصص]. أنشئ اختبارًا متعدد الخيارات من 15 سؤالًا لتقييم تمكّن الطلبة من [الموضوع/الفصل].
+
+التعليمات:
+- توزيع الأسئلة حسب مستويات بلوم: 5 أسئلة للحفظ/الفهم، 5 أسئلة للتطبيق، 5 أسئلة للتحليل
+- تقديم 4 اقتراحات لكل سؤال مع إجابة صحيحة واحدة
+- الإشارة إلى الإجابة الصحيحة والتعليل بعد كل سؤال
+- تكييف الأمثلة مع السياق التونسي (حالات، مؤسسات، شركات محلية)
+- تنويع الصياغات: سؤال مباشر، حالة عملية، نص يتمم
+
+الجمهور: طلبة [المستوى] درسوا [تفاصيل المحتوى].
+نقاط القوة المعتادة: [حدّد].
+نقاط الضعف المعتادة: [حدّد].</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 3 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">3 · Produire une rétroaction sur un travail étudiant</span>
+      <span class="prompt-use">Correction</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant universitaire bienveillant mais exigeant en [discipline]. Je vais te fournir un extrait de travail étudiant. Produis une rétroaction structurée selon le modèle suivant :
+
+1. Ce qui fonctionne bien (2 à 3 points précis, pas de flatterie)
+2. Ce qui doit être amélioré (2 à 3 points concrets avec indication du chemin à prendre)
+3. Une question ouverte pour faire réfléchir l'étudiant
+4. Une ressource complémentaire pertinente (article, chapitre, auteur)
+
+Ton : respectueux, direct, sans infantilisation. Niveau d'exigence correspondant à un étudiant de [niveau].
+
+Voici l'extrait à corriger :
+[coller le texte de l'étudiant]</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ جامعي ودود ومتطلب في [التخصص]. سأزودك بمقتطف من عمل طالب. أنتج تغذية راجعة منظمة وفق النموذج التالي:
+
+1. ما يسير جيدًا (نقطتان إلى ثلاث نقاط دقيقة، لا مجاملات)
+2. ما يحتاج إلى تحسين (نقطتان إلى ثلاث نقاط ملموسة مع توضيح المسار الواجب اتخاذه)
+3. سؤال مفتوح يُفكّر الطالب
+4. مورد تكميلي ذو صلة (مقال، فصل، مؤلف)
+
+الأسلوب: محترم، مباشر، دون تصغير. مستوى الاشتراطات يتناسب مع طالب [المستوى].
+
+إليك المقتطف المراد تصحيحه:
+[الصق نص الطالب]</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 4 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">4 · Transformer un cours dense en fiche de révision</span>
+      <span class="prompt-use">Support étudiant</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es concepteur pédagogique. À partir du chapitre de cours suivant, produis une fiche de révision destinée à des étudiants de [niveau] en [discipline].
+
+Structure :
+1. Les 5 concepts clés à retenir (une phrase chacun)
+2. Un schéma conceptuel en texte structuré (hiérarchie à 3 niveaux)
+3. Les 3 définitions à connaître par cœur
+4. 5 questions flash pour s'auto-tester
+5. Un piège à éviter fréquent chez les étudiants sur ce chapitre
+6. Une phrase mémo pour retenir l'essentiel
+
+Contraintes : langue accessible, éviter le jargon non essentiel, une page maximum.
+
+Voici le chapitre :
+[coller le contenu]</div>
+    <div class="prompt-body" lang="ar">أنت مصمم بيداغوجي. انطلاقًا من فصل الدرس التالي، أنتج بطاقة مراجعة موجهة لطلبة [المستوى] في [التخصص].
+
+البنية:
+1. المفاهيم الخمسة الأساسية الواجب استيعابها (جملة واحدة لكل منها)
+2. مخطط مفاهيمي في نص منظم (تسلسل هرمي من 3 مستويات)
+3. التعاريف الثلاثة الواجب حفظها عن ظهر قلب
+4. 5 أسئلة سريعة للاختبار الذاتي
+5. فخ شائع يقع فيه الطلبة في هذا الفصل
+6. جملة تذكيرية لحفظ الأساسي
+
+القيود: لغة ميسّرة، تجنب المصطلحات غير الضرورية، صفحة واحدة كحد أقصى.
+
+إليك الفصل:
+[الصق المحتوى]</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 5 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">5 · Générer une étude de cas ancrée en Tunisie</span>
+      <span class="prompt-use">Activité active</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant-chercheur en [discipline]. Construis une étude de cas originale pour une séance de TD avec des étudiants de [niveau].
+
+Ancrage : la situation doit se dérouler dans le contexte tunisien (entreprise, institution, territoire, actualité). Utiliser des noms propres crédibles (entreprise fictive mais plausible, région existante, secteur économique réel tunisien).
+
+Structure de l'étude de cas :
+1. Présentation du contexte (200 mots)
+2. Exposé de la situation problématique (150 mots)
+3. Données chiffrées ou documents à exploiter (crédibles, sans inventer de sources vérifiables)
+4. Trois questions progressives à traiter par les étudiants
+5. Grille de critères d'évaluation pour le correcteur
+
+Thème ciblé : [préciser].
+Compétences à mobiliser : [préciser].</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ باحث في [التخصص]. ابنِ دراسة حالة أصلية لحصة أعمال موجهة مع طلبة [المستوى].
+
+الإرساء: يجب أن تدور الوضعية في السياق التونسي (مؤسسة، إدارة، جهة، راهنية). استعمل أسماء علم موثوقة (مؤسسة خيالية لكن ممكنة، جهة موجودة، قطاع اقتصادي تونسي حقيقي).
+
+بنية دراسة الحالة:
+1. تقديم السياق (200 كلمة)
+2. عرض الوضعية الإشكالية (150 كلمة)
+3. معطيات رقمية أو وثائق للاستغلال (موثوقة، دون اختراع مصادر قابلة للتحقق)
+4. ثلاثة أسئلة متدرجة يعالجها الطلبة
+5. شبكة معايير التقييم للمصحح
+
+الموضوع المستهدف: [حدّد].
+الكفاءات المطلوب تعبئتها: [حدّد].</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 6 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">6 · Reformuler un concept pour étudiants débutants</span>
+      <span class="prompt-use">Clarification</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es vulgarisateur pédagogique expérimenté. Reformule le concept suivant pour des étudiants de première année qui découvrent la [discipline].
+
+Concept : [concept à expliquer]
+
+Consignes :
+1. Commencer par une analogie concrète tirée de la vie quotidienne tunisienne (marché hebdomadaire, transport, famille, commerce)
+2. Donner la définition technique précise
+3. Illustrer avec un exemple simple puis un exemple plus avancé
+4. Anticiper deux confusions fréquentes chez les débutants
+5. Proposer une formule mnémotechnique pour retenir l'essentiel
+
+Longueur : 300 mots maximum. Ton : clair sans être condescendant.</div>
+    <div class="prompt-body" lang="ar">أنت خبير في التبسيط البيداغوجي. أعد صياغة المفهوم التالي لطلبة السنة الأولى الذين يكتشفون [التخصص].
+
+المفهوم: [المفهوم المراد شرحه]
+
+التعليمات:
+1. البدء بمقارنة ملموسة من الحياة اليومية التونسية (السوق الأسبوعي، النقل، العائلة، التجارة)
+2. تقديم التعريف التقني الدقيق
+3. التوضيح بمثال بسيط ثم مثال أكثر تقدمًا
+4. استباق التباسين متكررين لدى المبتدئين
+5. اقتراح صيغة تذكيرية لحفظ الأساسي
+
+الطول: 300 كلمة كحد أقصى. الأسلوب: واضح دون استعلاء.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 7 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">7 · Concevoir une activité d'ouverture de séance</span>
+      <span class="prompt-use">Pédagogie active</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es ingénieur pédagogique spécialisé en enseignement supérieur. Propose trois activités différentes d'ouverture de séance (5 à 10 minutes chacune) pour capter l'attention des étudiants et activer leurs connaissances préalables.
+
+Contexte :
+- Cours : [intitulé]
+- Chapitre du jour : [chapitre]
+- Niveau : [L1/L2/L3/Master]
+- Effectif : [nombre]
+- Salle : [amphi / salle TD / en ligne]
+
+Pour chaque activité, préciser :
+- Objectif cognitif visé
+- Déroulé minuté
+- Matériel requis
+- Transition vers le contenu du cours
+- Variante possible si peu de temps
+
+Privilégier des activités qui fonctionnent avec des effectifs nombreux sans matériel sophistiqué.</div>
+    <div class="prompt-body" lang="ar">أنت مهندس بيداغوجي متخصص في التعليم العالي. اقترح ثلاثة أنشطة مختلفة لافتتاح حصة (من 5 إلى 10 دقائق لكل نشاط) لجذب انتباه الطلبة وتنشيط معارفهم المسبقة.
+
+السياق:
+- المادة: [العنوان]
+- فصل اليوم: [الفصل]
+- المستوى: [سنة أولى/ثانية/ثالثة/ماجستير]
+- العدد: [العدد]
+- القاعة: [مدرج / قاعة أعمال موجهة / عن بعد]
+
+لكل نشاط، حدد:
+- الهدف المعرفي المقصود
+- السير المضبوط زمنيًا
+- المواد المطلوبة
+- الانتقال إلى محتوى الدرس
+- بديل ممكن عند ضيق الوقت
+
+تفضيل الأنشطة التي تعمل مع أعداد كبيرة دون معدات متطورة.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 8 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">8 · Analyser la qualité d'un sujet d'examen</span>
+      <span class="prompt-use">Qualité pédagogique</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es expert en docimologie (science de l'évaluation). Analyse le sujet d'examen suivant selon quatre axes :
+
+1. Validité de contenu : couvre-t-il réellement les apprentissages visés ?
+2. Niveau cognitif sollicité (Bloom) : équilibre entre les niveaux
+3. Clarté des consignes : risques d'ambiguïté ?
+4. Difficulté perçue : adaptée au niveau [préciser] ?
+
+Pour chaque axe, indiquer :
+- Diagnostic (forces / faiblesses)
+- Suggestion d'amélioration concrète et formulée
+
+Terminer par une version révisée du sujet si nécessaire.
+
+Voici le sujet à analyser :
+[coller le sujet]</div>
+    <div class="prompt-body" lang="ar">أنت خبير في علم التقويم. حلل موضوع الامتحان التالي وفق أربعة محاور:
+
+1. صدق المحتوى: هل يغطي فعلًا التعلمات المستهدفة؟
+2. المستوى المعرفي المطلوب (بلوم): التوازن بين المستويات
+3. وضوح التعليمات: مخاطر الالتباس؟
+4. الصعوبة المدركة: ملائمة للمستوى [حدّد]؟
+
+لكل محور، اذكر:
+- التشخيص (نقاط القوة / الضعف)
+- اقتراح تحسين ملموس ومصاغ
+
+اختم بنسخة منقحة من الموضوع إذا لزم الأمر.
+
+إليك الموضوع المطلوب تحليله:
+[الصق الموضوع]</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+</section>
+
+<section id="plan">
+  <h2>Plan d'action individuel</h2>
+  <div class="action-plan">
+    <p>Fiche à compléter en fin de jour 2.</p>
+    <ol>
+      <li><strong>Une action immédiate :</strong> quelque chose que vous mettez en œuvre dans votre pratique dès la semaine du 4 mai 2026. Détailler avec quand, quoi, comment.</li>
+      <li><strong>Une expérimentation à moyen terme :</strong> un dispositif à tester sur la fin du semestre ou au démarrage du prochain. Détailler avec un indicateur de réussite.</li>
+      <li><strong>Une question ouverte :</strong> quelque chose qui reste flou, que vous souhaitez approfondir par vous-même, ou sur lequel vous voulez échanger avec un pair après la formation.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="partage">
+  <h2>Partager cette page</h2>
+  <div class="qr-section">
+    <p>Scanner ce QR code pour retrouver la page sur téléphone :</p>
+    <div id="qrcode"></div>
+    <p class="url-share" id="pageurl"></p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>Formation conçue et animée par Rochane Kherbouche · <a href="https://ia.rochane.fr" style="color: var(--primary); text-decoration: none;">ia.rochane.fr</a></p>
+  <p style="margin-top: 0.5rem; font-size: 0.85rem;">Page accessible sur <strong>ia-tunis2026.rochane.fr</strong> · Prompts et documents adaptables librement à votre discipline.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  document.getElementById('pageurl').textContent = window.location.href;
+  new QRCode(document.getElementById("qrcode"), {
+    text: window.location.href,
+    width: 180,
+    height: 180,
+    colorDark: "#8B1E3F",
+    colorLight: "#ffffff"
+  });
+
+  function switchLang(btn, lang) {
+    const card = btn.closest('.prompt-card');
+    card.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    card.querySelectorAll('.prompt-body').forEach(body => {
+      body.classList.toggle('active', body.getAttribute('lang') === lang);
+    });
+  }
+
+  function copyPrompt(btn) {
+    const card = btn.closest('.prompt-card');
+    const activeBody = card.querySelector('.prompt-body.active');
+    const text = activeBody.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = "Copié !";
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
