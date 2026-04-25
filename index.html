@@ -44,6 +44,80 @@
     font-weight: 600;
     margin-top: 1rem;
   }
+
+  .espaces-section {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 2px solid var(--accent);
+    margin-bottom: 2rem;
+  }
+  .espaces-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .espace-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all 0.2s;
+    border: 1px solid var(--border);
+    background: var(--bg);
+  }
+  .espace-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+  .espace-card.wooclap { border-left: 5px solid #6E5BC7; }
+  .espace-card.padlet { border-left: 5px solid #ED5564; }
+  .espace-icon {
+    font-size: 2rem;
+    font-weight: 800;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+  }
+  .espace-card.wooclap .espace-icon { background: #6E5BC7; }
+  .espace-card.padlet .espace-icon { background: #ED5564; }
+  .espace-content { flex: 1; min-width: 0; }
+  .espace-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+  }
+  .espace-desc {
+    font-size: 0.92rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  .espace-tip {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  .espace-link {
+    font-size: 0.78rem;
+    font-family: monospace;
+    color: var(--primary);
+    background: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    display: inline-block;
+    word-break: break-all;
+  }
   .event-tag {
     display: inline-block;
     background: rgba(255,255,255,0.2);
@@ -364,6 +438,15 @@
     .tools-grid { grid-template-columns: 1fr; gap: 0.8rem; }
     .tool { padding: 1rem; }
 
+    /* Espaces collaboratifs : empilement sur mobile */
+    .espaces-section { padding: 1rem; }
+    .espaces-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+    .espace-card { padding: 1rem; }
+    .espace-icon { width: 42px; height: 42px; font-size: 1.5rem; }
+    .espace-name { font-size: 0.98rem; }
+    .espace-desc { font-size: 0.88rem; }
+    .espace-tip { font-size: 0.78rem; }
+
     /* Prompts : ergonomie tactile */
     .prompt-card { border-radius: 6px; margin-bottom: 0.8rem; }
     .prompt-header {
@@ -454,8 +537,42 @@
 
 <div class="container">
 
+<section id="espaces" class="espaces-section">
+  <h2 style="border: none; padding: 0; margin-bottom: 1rem;">Espaces collaboratifs de la formation</h2>
+  <p style="margin-bottom: 1.2rem;">Deux espaces vous accompagnent pendant les deux journées. Gardez les deux ouverts dans votre navigateur ou ajoutez-les à vos favoris.</p>
+
+  <div class="espaces-grid">
+
+    <a href="https://app.wooclap.com/IATUNIS2026" target="_blank" class="espace-card wooclap">
+      <div class="espace-icon">?</div>
+      <div class="espace-content">
+        <div class="espace-name">Wooclap · Mur de questions</div>
+        <div class="espace-desc">Posez vos questions, likez celles des autres. Ouvert en permanence pendant la formation.</div>
+        <div class="espace-tip">Pour les plus discrets : posez vos questions en anonyme, elles seront traitées comme les autres.</div>
+        <div class="espace-link">app.wooclap.com/IATUNIS2026</div>
+      </div>
+    </a>
+
+    <a href="https://padlet.com/contact3435/ia-tunis-2026-s2he6pvppdw6v4jc" target="_blank" class="espace-card padlet">
+      <div class="espace-icon">+</div>
+      <div class="espace-content">
+        <div class="espace-name">Padlet · Mur des productions</div>
+        <div class="espace-desc">Déposez vos livrables : podcasts NotebookLM, prompts, fiches produites, captures d'écran.</div>
+        <div class="espace-tip">Organisé en colonnes par activité. Vos productions restent accessibles après la formation.</div>
+        <div class="espace-link">padlet.com/contact3435/ia-tunis-2026</div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</div>
+
+<div class="container">
+
 <nav class="toc">
   <ul>
+    <li><a href="#espaces" style="background: var(--accent); color: var(--primary-dark); font-weight: 700;">★ Espaces collaboratifs</a></li>
     <li><a href="#objectifs">Objectifs</a></li>
     <li><a href="#programme">Programme</a></li>
     <li><a href="#outils">Outils</a></li>
@@ -486,7 +603,7 @@
   <h3 style="color: var(--j1);">Jour 1 · 29 avril · Après-midi</h3>
   <div class="programme-item">
     <span class="horaire">13h30 - 14h00</span>
-    <span class="intitule">Accueil et tour de table</span>
+    <span class="intitule">Accueil et activation collective via Wooclap</span>
     <span class="duree">30 min</span>
   </div>
   <div class="programme-item">
