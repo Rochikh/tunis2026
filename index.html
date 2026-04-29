@@ -732,8 +732,20 @@
     </div>
     <div class="programme-item">
       <span class="horaire">13h45 - 15h15</span>
-      <span class="intitule">Atelier conception d'une séquence</span>
+      <span class="intitule">Sensibiliser mes étudiants à l'IA : production assistée par NotebookLM</span>
       <span class="duree">90 min</span>
+    </div>
+    <div class="activity-detail" style="border-left-color: var(--j2);">
+      <div class="activity-detail-title" style="color: var(--j2);">Atelier de production d'un livrable transférable</div>
+      <p class="activity-detail-intro">Vous produirez un livrable signé, prêt à utiliser en début de semestre avec vos étudiants pour amorcer une réflexion critique sur l'IA. NotebookLM sert de moteur de production, vous personnalisez et signez.</p>
+      <p class="activity-detail-intro"><strong>Sources fournies à importer :</strong> 2 à 3 articles scientifiques sur les effets cognitifs de l'IA (étude MIT sur ChatGPT et activité cérébrale, recherches sur l'effet GPS et la métacognition). À combiner avec votre propre syllabus de cours.</p>
+      <p class="activity-detail-intro"><strong>Livrable attendu :</strong> 2 pages A4 maximum, signées de votre nom et de votre cours, déposées sur Padlet en colonne dédiée.</p>
+      <ol class="activity-questions">
+        <li>Une <strong>matrice des compétences</strong> propres à votre discipline : ce que l'IA fait mieux, ce qui reste non-négociable, pourquoi.</li>
+        <li>Un <strong>kit de 5 questions</strong> pour amorcer le débat avec vos étudiants en début de semestre.</li>
+        <li><em>Bonus optionnel :</em> une <strong>fausse copie</strong> annotée pour entraîner vos étudiants à détecter les erreurs typiques de l'IA.</li>
+      </ol>
+      <p class="activity-detail-note">Les 3 prompts-types à utiliser dans NotebookLM sont disponibles dans la bibliothèque de prompts (numéros 10, 11, 12).</p>
     </div>
     <div class="programme-item">
       <span class="horaire">15h15 - 15h30</span>
@@ -1232,6 +1244,131 @@ Merci de structurer ta réponse en deux parties :
 يرجى تنظيم إجابتك في جزأين:
 1. ملخص الموجود (لفهمي)
 2. التوجيه المحسّن (الذي يمكنني نسخه ولصقه لبدء محادثة جديدة)</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 10 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">10 · Matrice des compétences sacrifiées (NotebookLM)</span>
+      <span class="prompt-use">Sensibilisation étudiants</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">À utiliser dans un notebook NotebookLM contenant : votre syllabus de cours + 2 ou 3 articles scientifiques sur les effets cognitifs de l'IA.
+
+À partir de mon syllabus et des sources scientifiques importées, produis une matrice à deux entrées pour ma discipline.
+
+En lignes : les 5 à 7 compétences clés que je vise dans mon cours.
+
+En colonnes :
+1. Ce que l'IA fait mieux que l'étudiant aujourd'hui
+2. Ce que l'étudiant doit absolument continuer à savoir faire sans IA
+3. Pourquoi cette compétence reste non-négociable
+
+Sois précis, ancré dans ma discipline, et appuie-toi sur les sources scientifiques importées pour justifier les choix de la colonne 3.
+
+Format : tableau structuré, prêt à être copié dans un document Word.</div>
+    <div class="prompt-body" lang="ar">يُستعمل في دفتر NotebookLM يحتوي على: مخطط مادتك الدراسية + مقالين أو ثلاثة مقالات علمية حول التأثيرات المعرفية للذكاء الاصطناعي.
+
+انطلاقًا من مخططي الدراسي والمصادر العلمية المستوردة، أنتج مصفوفة مزدوجة المداخل لتخصصي.
+
+في الأسطر: من 5 إلى 7 كفاءات رئيسية أستهدفها في درسي.
+
+في الأعمدة:
+1. ما يقوم به الذكاء الاصطناعي بشكل أفضل من الطالب اليوم
+2. ما يجب على الطالب الاستمرار في إتقانه دون ذكاء اصطناعي
+3. لماذا تبقى هذه الكفاءة غير قابلة للتفاوض
+
+كن دقيقًا، مرتكزًا في تخصصي، واستند إلى المصادر العلمية المستوردة لتبرير اختيارات العمود الثالث.
+
+التنسيق: جدول منظم، جاهز للنسخ في مستند Word.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 11 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">11 · Kit de 5 questions pour amorcer le débat (NotebookLM)</span>
+      <span class="prompt-use">Sensibilisation étudiants</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">À utiliser dans le même notebook NotebookLM (syllabus + articles scientifiques).
+
+À partir de mon syllabus et des sources scientifiques importées, génère 5 questions ouvertes que je pourrai poser à mes étudiants en début de semestre pour amorcer un débat de 10 minutes sur les usages critiques de l'IA dans ma discipline.
+
+Pour chaque question, ajoute une ligne de cadrage indiquant ce que je cherche à faire émerger comme prise de conscience.
+
+Contraintes :
+- Questions disciplinairement précises (pas génériques)
+- Provocatrices sans être moralisatrices
+- Ancrées dans le quotidien d'un étudiant de mon niveau
+- Formulées en langage accessible
+
+Format : liste numérotée de 1 à 5, avec la question en gras et le cadrage en italique en dessous.</div>
+    <div class="prompt-body" lang="ar">يُستعمل في نفس دفتر NotebookLM (مخطط الدرس + المقالات العلمية).
+
+انطلاقًا من مخططي الدراسي والمصادر العلمية المستوردة، أنتج 5 أسئلة مفتوحة يمكنني طرحها على طلبتي في بداية الفصل الدراسي لإطلاق نقاش لمدة 10 دقائق حول الاستعمالات النقدية للذكاء الاصطناعي في تخصصي.
+
+لكل سؤال، أضف سطر تأطير يوضح ما أسعى لإبرازه من وعي.
+
+القيود:
+- أسئلة دقيقة تخصصيًا (غير عامة)
+- مستفزة دون أن تكون وعظية
+- مرتكزة في يوميات طالب من مستواي
+- مصاغة بلغة ميسّرة
+
+التنسيق: قائمة مرقمة من 1 إلى 5، مع السؤال بالخط العريض والتأطير بالخط المائل تحته.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Prompt 12 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">12 · Fausse copie commentée (NotebookLM, bonus)</span>
+      <span class="prompt-use">Sensibilisation étudiants - bonus</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">À utiliser dans le même notebook NotebookLM. Activité bonus, à n'aborder que si vous avez terminé la matrice et le kit de 5 questions.
+
+Génère un extrait de travail étudiant de 200 mots dans ma discipline, qui semble bien rédigé mais contient 4 erreurs subtiles caractéristiques de l'IA :
+1. Une hallucination factuelle (date, nom propre, chiffre inventé)
+2. Un raisonnement creux qui paraît logique mais ne tient pas
+3. Une référence bibliographique inventée
+4. Un faux lien de causalité
+
+Annote ensuite les 4 erreurs avec leur explication précise.
+
+Termine par une grille de 4 questions à poser aux étudiants pour qu'ils détectent eux-mêmes ces erreurs.
+
+Format final :
+1. La copie (200 mots, sans annotations apparentes)
+2. Un encadré d'analyse avec les 4 erreurs identifiées
+3. La grille de questions pour les étudiants</div>
+    <div class="prompt-body" lang="ar">يُستعمل في نفس دفتر NotebookLM. نشاط إضافي، لا يُتناول إلا بعد إنهاء المصفوفة وأسئلة النقاش الخمسة.
+
+أنتج مقتطفًا من عمل طالب من 200 كلمة في تخصصي، يبدو مكتوبًا جيدًا لكنه يحتوي على 4 أخطاء دقيقة مميزة للذكاء الاصطناعي:
+1. هلوسة وقائعية (تاريخ، اسم علم، رقم مختلق)
+2. استدلال أجوف يبدو منطقيًا لكنه لا يصمد
+3. مرجع ببليوغرافي مختلق
+4. علاقة سببية زائفة
+
+ثم علّق على الأخطاء الأربعة بشرح دقيق.
+
+اختم بشبكة من 4 أسئلة لطرحها على الطلبة كي يكتشفوا هذه الأخطاء بأنفسهم.
+
+التنسيق النهائي:
+1. النسخة (200 كلمة، دون تعليقات ظاهرة)
+2. إطار تحليل بالأخطاء الأربعة المحددة
+3. شبكة الأسئلة للطلبة</div>
     <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
   </div>
 
