@@ -617,7 +617,6 @@
     <li><a href="#objectifs">Objectifs</a></li>
     <li><a href="#programme">Programme</a></li>
     <li><a href="#outils">Outils</a></li>
-    <li><a href="#documents">Documents exemples</a></li>
     <li><a href="#prompts">Prompts (FR / AR)</a></li>
     <li><a href="#plan">Plan d'action</a></li>
     <li><a href="#partage">Partager</a></li>
@@ -846,377 +845,17 @@
   </div>
 </section>
 
-<section id="documents">
-  <h2>Documents exemples</h2>
-  <p>Trois documents types serviront de support aux ateliers. Ils couvrent différentes disciplines de l'enseignement supérieur tunisien.</p>
-
-  <div class="doc-sample">
-    <h4>Document 1 · Syllabus en économie du développement</h4>
-    <div class="meta-doc">Licence 2 · Faculté des Sciences Économiques et de Gestion</div>
-    <p><strong>Intitulé :</strong> Économie du développement et transition post-2011 en Tunisie</p>
-    <p><strong>Volume horaire :</strong> 42h (CM : 28h · TD : 14h)</p>
-    <p><strong>Prérequis :</strong> microéconomie, macroéconomie, notions de statistiques descriptives.</p>
-    <p><strong>Compétences visées :</strong></p>
-    <ul>
-      <li>Analyser les indicateurs de développement humain d'un pays en transition</li>
-      <li>Comparer les trajectoires économiques du Maghreb</li>
-      <li>Évaluer l'impact des réformes structurelles sur l'emploi des jeunes diplômés</li>
-      <li>Construire un diagnostic sectoriel (tourisme, phosphates, agriculture oléicole)</li>
-    </ul>
-    <p><strong>Plan :</strong> théories classiques du développement · spécificités de l'économie tunisienne · rôle des diasporas · intégration régionale · transformation numérique · défis environnementaux.</p>
-    <p><strong>Évaluation :</strong> contrôle continu 30% · dossier collectif 30% · examen final 40%.</p>
-  </div>
-
-  <div class="doc-sample">
-    <h4>Document 2 · Article de recherche en sciences de l'éducation</h4>
-    <div class="meta-doc">Article dense pour analyse avec NotebookLM · 12 pages</div>
-    <p><strong>Titre :</strong> L'intégration des technologies éducatives dans l'enseignement supérieur tunisien : état des lieux, freins et leviers (2015-2024)</p>
-    <p><strong>Résumé :</strong> Enquête menée auprès de 284 enseignants dans huit universités tunisiennes (Tunis El Manar, Carthage, Manouba, Sfax, Sousse, Gabès, Kairouan, Monastir). Trois configurations d'usage identifiées : adoption contrainte (38%), usage périphérique (45%), intégration réflexive (17%). Les principaux freins relèvent de l'infrastructure, de la formation initiale et du manque de temps dédié à la conception pédagogique.</p>
-    <p><strong>Mots-clés :</strong> technologies éducatives, université tunisienne, transformation numérique, adoption, communauté de pratique.</p>
-    <p><em>Document fictif à visée pédagogique. Le texte intégral est fourni en PDF le jour de la formation.</em></p>
-  </div>
-
-  <div class="doc-sample">
-    <h4>Document 3 · Extrait de cours en droit</h4>
-    <div class="meta-doc">Licence 3 · Faculté de Droit et des Sciences Politiques</div>
-    <p><strong>Chapitre :</strong> La Constitution de 2014 et ses évolutions : architecture institutionnelle et garanties des droits fondamentaux.</p>
-    <p><strong>Contenu :</strong> genèse du texte constitutionnel · séparation des pouvoirs · rôle de l'Assemblée des Représentants du Peuple · indépendance de la justice · instances constitutionnelles · droits et libertés · révisions postérieures · controverses doctrinales.</p>
-    <p><strong>Volume :</strong> 18 pages denses, références jurisprudentielles et doctrinales.</p>
-  </div>
-</section>
-
 <section id="prompts">
   <h2>Bibliothèque de prompts</h2>
   <p>Prompts prêts à l'emploi en français et en arabe. Basculer entre les deux langues avec les onglets, puis copier avec le bouton. Remplacer ensuite les variables entre crochets.</p>
 
-  <!-- Prompt 1 -->
+  <h3 style="background: var(--primary); color: white; padding: 0.6rem 1rem; border-radius: 6px; margin-top: 2rem;">Pendant la formation</h3>
+  <p style="margin-top: 1rem;">Ces 4 prompts sont mobilisés pendant les deux journées. Vous les utiliserez aux moments indiqués dans le programme.</p>
+
+  <!-- Formation Prompt 1 -->
   <div class="prompt-card">
     <div class="prompt-header">
-      <span class="prompt-title">1 · Construire un plan de cours détaillé</span>
-      <span class="prompt-use">Préparation de cours</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es enseignant-chercheur expérimenté en [discipline] dans une université tunisienne. Construis un plan de cours détaillé pour une séance de [durée] sur le thème suivant : [thème].
-
-Contexte :
-- Public : étudiants de [niveau L1/L2/L3/Master]
-- Effectif : environ [nombre] étudiants
-- Prérequis des étudiants : [prérequis]
-- Contraintes matérielles : [salle classique / amphi / salle informatique]
-
-Structure attendue :
-1. Objectifs pédagogiques formulés avec les verbes de la taxonomie de Bloom (minimum 3 objectifs de niveaux différents)
-2. Plan séquencé avec minutage précis
-3. Activités d'apprentissage actif intégrées (au minimum 2)
-4. Moment de vérification de la compréhension en cours de séance
-5. Évaluation formative de fin de séance
-
-Adapte les exemples au contexte tunisien quand c'est pertinent.</div>
-    <div class="prompt-body" lang="ar">أنت أستاذ باحث ذو خبرة في [التخصص] بجامعة تونسية. ابنِ مخططًا مفصلًا لدرس مدته [المدة] حول الموضوع التالي: [الموضوع].
-
-السياق:
-- الجمهور: طلبة [المستوى: السنة الأولى/الثانية/الثالثة/ماجستير]
-- العدد: حوالي [العدد] طالبًا
-- المتطلبات المسبقة للطلبة: [المتطلبات]
-- القيود المادية: [قاعة عادية / مدرج / قاعة إعلامية]
-
-البنية المطلوبة:
-1. الأهداف البيداغوجية مصاغة بأفعال تصنيف بلوم (ثلاثة أهداف على الأقل من مستويات مختلفة)
-2. مخطط متسلسل بتوقيت دقيق
-3. أنشطة تعلم نشط مدمجة (نشاطان على الأقل)
-4. لحظة تحقق من الفهم أثناء الحصة
-5. تقييم تكويني في نهاية الحصة
-
-كيّف الأمثلة مع السياق التونسي عند الاقتضاء.</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 2 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">2 · Générer un QCM différencié (Bloom)</span>
-      <span class="prompt-use">Évaluation</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es enseignant universitaire en [discipline]. Génère un QCM de 15 questions pour évaluer la maîtrise des étudiants sur [sujet/chapitre].
-
-Consignes :
-- Répartir les questions par niveau de Bloom : 5 questions de mémorisation/compréhension, 5 questions d'application, 5 questions d'analyse
-- Fournir 4 propositions par question avec une seule bonne réponse
-- Indiquer la bonne réponse et la justification après chaque question
-- Adapter les exemples au contexte tunisien (cas, institutions, entreprises locales)
-- Varier les formulations : question directe, cas pratique, énoncé à compléter
-
-Public : étudiants en [niveau] ayant suivi [précision sur les contenus].
-Points forts habituels : [préciser].
-Points faibles habituels : [préciser].</div>
-    <div class="prompt-body" lang="ar">أنت أستاذ جامعي في [التخصص]. أنشئ اختبارًا متعدد الخيارات من 15 سؤالًا لتقييم تمكّن الطلبة من [الموضوع/الفصل].
-
-التعليمات:
-- توزيع الأسئلة حسب مستويات بلوم: 5 أسئلة للحفظ/الفهم، 5 أسئلة للتطبيق، 5 أسئلة للتحليل
-- تقديم 4 اقتراحات لكل سؤال مع إجابة صحيحة واحدة
-- الإشارة إلى الإجابة الصحيحة والتعليل بعد كل سؤال
-- تكييف الأمثلة مع السياق التونسي (حالات، مؤسسات، شركات محلية)
-- تنويع الصياغات: سؤال مباشر، حالة عملية، نص يتمم
-
-الجمهور: طلبة [المستوى] درسوا [تفاصيل المحتوى].
-نقاط القوة المعتادة: [حدّد].
-نقاط الضعف المعتادة: [حدّد].</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 3 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">3 · Produire une rétroaction sur un travail étudiant</span>
-      <span class="prompt-use">Correction</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es enseignant universitaire bienveillant mais exigeant en [discipline]. Je vais te fournir un extrait de travail étudiant. Produis une rétroaction structurée selon le modèle suivant :
-
-1. Ce qui fonctionne bien (2 à 3 points précis, pas de flatterie)
-2. Ce qui doit être amélioré (2 à 3 points concrets avec indication du chemin à prendre)
-3. Une question ouverte pour faire réfléchir l'étudiant
-4. Une ressource complémentaire pertinente (article, chapitre, auteur)
-
-Ton : respectueux, direct, sans infantilisation. Niveau d'exigence correspondant à un étudiant de [niveau].
-
-Voici l'extrait à corriger :
-[coller le texte de l'étudiant]</div>
-    <div class="prompt-body" lang="ar">أنت أستاذ جامعي ودود ومتطلب في [التخصص]. سأزودك بمقتطف من عمل طالب. أنتج تغذية راجعة منظمة وفق النموذج التالي:
-
-1. ما يسير جيدًا (نقطتان إلى ثلاث نقاط دقيقة، لا مجاملات)
-2. ما يحتاج إلى تحسين (نقطتان إلى ثلاث نقاط ملموسة مع توضيح المسار الواجب اتخاذه)
-3. سؤال مفتوح يُفكّر الطالب
-4. مورد تكميلي ذو صلة (مقال، فصل، مؤلف)
-
-الأسلوب: محترم، مباشر، دون تصغير. مستوى الاشتراطات يتناسب مع طالب [المستوى].
-
-إليك المقتطف المراد تصحيحه:
-[الصق نص الطالب]</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 4 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">4 · Transformer un cours dense en fiche de révision</span>
-      <span class="prompt-use">Support étudiant</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es concepteur pédagogique. À partir du chapitre de cours suivant, produis une fiche de révision destinée à des étudiants de [niveau] en [discipline].
-
-Structure :
-1. Les 5 concepts clés à retenir (une phrase chacun)
-2. Un schéma conceptuel en texte structuré (hiérarchie à 3 niveaux)
-3. Les 3 définitions à connaître par cœur
-4. 5 questions flash pour s'auto-tester
-5. Un piège à éviter fréquent chez les étudiants sur ce chapitre
-6. Une phrase mémo pour retenir l'essentiel
-
-Contraintes : langue accessible, éviter le jargon non essentiel, une page maximum.
-
-Voici le chapitre :
-[coller le contenu]</div>
-    <div class="prompt-body" lang="ar">أنت مصمم بيداغوجي. انطلاقًا من فصل الدرس التالي، أنتج بطاقة مراجعة موجهة لطلبة [المستوى] في [التخصص].
-
-البنية:
-1. المفاهيم الخمسة الأساسية الواجب استيعابها (جملة واحدة لكل منها)
-2. مخطط مفاهيمي في نص منظم (تسلسل هرمي من 3 مستويات)
-3. التعاريف الثلاثة الواجب حفظها عن ظهر قلب
-4. 5 أسئلة سريعة للاختبار الذاتي
-5. فخ شائع يقع فيه الطلبة في هذا الفصل
-6. جملة تذكيرية لحفظ الأساسي
-
-القيود: لغة ميسّرة، تجنب المصطلحات غير الضرورية، صفحة واحدة كحد أقصى.
-
-إليك الفصل:
-[الصق المحتوى]</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 5 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">5 · Générer une étude de cas ancrée en Tunisie</span>
-      <span class="prompt-use">Activité active</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es enseignant-chercheur en [discipline]. Construis une étude de cas originale pour une séance de TD avec des étudiants de [niveau].
-
-Ancrage : la situation doit se dérouler dans le contexte tunisien (entreprise, institution, territoire, actualité). Utiliser des noms propres crédibles (entreprise fictive mais plausible, région existante, secteur économique réel tunisien).
-
-Structure de l'étude de cas :
-1. Présentation du contexte (200 mots)
-2. Exposé de la situation problématique (150 mots)
-3. Données chiffrées ou documents à exploiter (crédibles, sans inventer de sources vérifiables)
-4. Trois questions progressives à traiter par les étudiants
-5. Grille de critères d'évaluation pour le correcteur
-
-Thème ciblé : [préciser].
-Compétences à mobiliser : [préciser].</div>
-    <div class="prompt-body" lang="ar">أنت أستاذ باحث في [التخصص]. ابنِ دراسة حالة أصلية لحصة أعمال موجهة مع طلبة [المستوى].
-
-الإرساء: يجب أن تدور الوضعية في السياق التونسي (مؤسسة، إدارة، جهة، راهنية). استعمل أسماء علم موثوقة (مؤسسة خيالية لكن ممكنة، جهة موجودة، قطاع اقتصادي تونسي حقيقي).
-
-بنية دراسة الحالة:
-1. تقديم السياق (200 كلمة)
-2. عرض الوضعية الإشكالية (150 كلمة)
-3. معطيات رقمية أو وثائق للاستغلال (موثوقة، دون اختراع مصادر قابلة للتحقق)
-4. ثلاثة أسئلة متدرجة يعالجها الطلبة
-5. شبكة معايير التقييم للمصحح
-
-الموضوع المستهدف: [حدّد].
-الكفاءات المطلوب تعبئتها: [حدّد].</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 6 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">6 · Reformuler un concept pour étudiants débutants</span>
-      <span class="prompt-use">Clarification</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es vulgarisateur pédagogique expérimenté. Reformule le concept suivant pour des étudiants de première année qui découvrent la [discipline].
-
-Concept : [concept à expliquer]
-
-Consignes :
-1. Commencer par une analogie concrète tirée de la vie quotidienne tunisienne (marché hebdomadaire, transport, famille, commerce)
-2. Donner la définition technique précise
-3. Illustrer avec un exemple simple puis un exemple plus avancé
-4. Anticiper deux confusions fréquentes chez les débutants
-5. Proposer une formule mnémotechnique pour retenir l'essentiel
-
-Longueur : 300 mots maximum. Ton : clair sans être condescendant.</div>
-    <div class="prompt-body" lang="ar">أنت خبير في التبسيط البيداغوجي. أعد صياغة المفهوم التالي لطلبة السنة الأولى الذين يكتشفون [التخصص].
-
-المفهوم: [المفهوم المراد شرحه]
-
-التعليمات:
-1. البدء بمقارنة ملموسة من الحياة اليومية التونسية (السوق الأسبوعي، النقل، العائلة، التجارة)
-2. تقديم التعريف التقني الدقيق
-3. التوضيح بمثال بسيط ثم مثال أكثر تقدمًا
-4. استباق التباسين متكررين لدى المبتدئين
-5. اقتراح صيغة تذكيرية لحفظ الأساسي
-
-الطول: 300 كلمة كحد أقصى. الأسلوب: واضح دون استعلاء.</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 7 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">7 · Concevoir une activité d'ouverture de séance</span>
-      <span class="prompt-use">Pédagogie active</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es ingénieur pédagogique spécialisé en enseignement supérieur. Propose trois activités différentes d'ouverture de séance (5 à 10 minutes chacune) pour capter l'attention des étudiants et activer leurs connaissances préalables.
-
-Contexte :
-- Cours : [intitulé]
-- Chapitre du jour : [chapitre]
-- Niveau : [L1/L2/L3/Master]
-- Effectif : [nombre]
-- Salle : [amphi / salle TD / en ligne]
-
-Pour chaque activité, préciser :
-- Objectif cognitif visé
-- Déroulé minuté
-- Matériel requis
-- Transition vers le contenu du cours
-- Variante possible si peu de temps
-
-Privilégier des activités qui fonctionnent avec des effectifs nombreux sans matériel sophistiqué.</div>
-    <div class="prompt-body" lang="ar">أنت مهندس بيداغوجي متخصص في التعليم العالي. اقترح ثلاثة أنشطة مختلفة لافتتاح حصة (من 5 إلى 10 دقائق لكل نشاط) لجذب انتباه الطلبة وتنشيط معارفهم المسبقة.
-
-السياق:
-- المادة: [العنوان]
-- فصل اليوم: [الفصل]
-- المستوى: [سنة أولى/ثانية/ثالثة/ماجستير]
-- العدد: [العدد]
-- القاعة: [مدرج / قاعة أعمال موجهة / عن بعد]
-
-لكل نشاط، حدد:
-- الهدف المعرفي المقصود
-- السير المضبوط زمنيًا
-- المواد المطلوبة
-- الانتقال إلى محتوى الدرس
-- بديل ممكن عند ضيق الوقت
-
-تفضيل الأنشطة التي تعمل مع أعداد كبيرة دون معدات متطورة.</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 8 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">8 · Analyser la qualité d'un sujet d'examen</span>
-      <span class="prompt-use">Qualité pédagogique</span>
-    </div>
-    <div class="lang-toggle">
-      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
-      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
-    </div>
-    <div class="prompt-body active" lang="fr">Tu es expert en docimologie (science de l'évaluation). Analyse le sujet d'examen suivant selon quatre axes :
-
-1. Validité de contenu : couvre-t-il réellement les apprentissages visés ?
-2. Niveau cognitif sollicité (Bloom) : équilibre entre les niveaux
-3. Clarté des consignes : risques d'ambiguïté ?
-4. Difficulté perçue : adaptée au niveau [préciser] ?
-
-Pour chaque axe, indiquer :
-- Diagnostic (forces / faiblesses)
-- Suggestion d'amélioration concrète et formulée
-
-Terminer par une version révisée du sujet si nécessaire.
-
-Voici le sujet à analyser :
-[coller le sujet]</div>
-    <div class="prompt-body" lang="ar">أنت خبير في علم التقويم. حلل موضوع الامتحان التالي وفق أربعة محاور:
-
-1. صدق المحتوى: هل يغطي فعلًا التعلمات المستهدفة؟
-2. المستوى المعرفي المطلوب (بلوم): التوازن بين المستويات
-3. وضوح التعليمات: مخاطر الالتباس؟
-4. الصعوبة المدركة: ملائمة للمستوى [حدّد]؟
-
-لكل محور، اذكر:
-- التشخيص (نقاط القوة / الضعف)
-- اقتراح تحسين ملموس ومصاغ
-
-اختم بنسخة منقحة من الموضوع إذا لزم الأمر.
-
-إليك الموضوع المطلوب تحليله:
-[الصق الموضوع]</div>
-    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
-  </div>
-
-  <!-- Prompt 9 -->
-  <div class="prompt-card">
-    <div class="prompt-header">
-      <span class="prompt-title">9 · Reprendre une conversation longue dans une nouvelle session</span>
+      <span class="prompt-title">1 · Reprendre une conversation longue dans une nouvelle session</span>
       <span class="prompt-use">Continuité de travail</span>
     </div>
     <div class="lang-toggle">
@@ -1292,10 +931,10 @@ Merci de structurer ta réponse en deux parties :
     <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
   </div>
 
-  <!-- Prompt 10 -->
+  <!-- Formation Prompt 2 -->
   <div class="prompt-card">
     <div class="prompt-header">
-      <span class="prompt-title">10 · Matrice des compétences sacrifiées (NotebookLM)</span>
+      <span class="prompt-title">2 · Matrice des compétences sacrifiées (NotebookLM) — défi 4 bonus</span>
       <span class="prompt-use">Sensibilisation étudiants</span>
     </div>
     <div class="lang-toggle">
@@ -1333,10 +972,10 @@ Format : tableau structuré, prêt à être copié dans un document Word.</div>
     <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
   </div>
 
-  <!-- Prompt 11 -->
+  <!-- Formation Prompt 3 -->
   <div class="prompt-card">
     <div class="prompt-header">
-      <span class="prompt-title">11 · Kit de 5 questions pour amorcer le débat (NotebookLM)</span>
+      <span class="prompt-title">3 · Kit de 5 questions pour amorcer le débat (NotebookLM) — défi 4</span>
       <span class="prompt-use">Sensibilisation étudiants</span>
     </div>
     <div class="lang-toggle">
@@ -1372,10 +1011,10 @@ Format : liste numérotée de 1 à 5, avec la question en gras et le cadrage en 
     <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
   </div>
 
-  <!-- Prompt 12 -->
+  <!-- Formation Prompt 4 -->
   <div class="prompt-card">
     <div class="prompt-header">
-      <span class="prompt-title">12 · Fausse copie commentée (NotebookLM, bonus)</span>
+      <span class="prompt-title">4 · Fausse copie commentée (NotebookLM) — bonus</span>
       <span class="prompt-use">Sensibilisation étudiants - bonus</span>
     </div>
     <div class="lang-toggle">
@@ -1414,6 +1053,333 @@ Format final :
 1. النسخة (200 كلمة، دون تعليقات ظاهرة)
 2. إطار تحليل بالأخطاء الأربعة المحددة
 3. شبكة الأسئلة للطلبة</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <h3 style="background: var(--muted); color: white; padding: 0.6rem 1rem; border-radius: 6px; margin-top: 2.5rem;">Pour la suite — bibliothèque étendue</h3>
+  <p style="margin-top: 1rem;">Ces 8 prompts complémentaires sont à mobiliser dans votre pratique quotidienne après la formation, selon vos besoins.</p>
+
+  <!-- Library Prompt 5 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">5 · Construire un plan de cours détaillé</span>
+      <span class="prompt-use">Préparation de cours</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant-chercheur expérimenté en [discipline] dans une université tunisienne. Construis un plan de cours détaillé pour une séance de [durée] sur le thème suivant : [thème].
+
+Contexte :
+- Public : étudiants de [niveau L1/L2/L3/Master]
+- Effectif : environ [nombre] étudiants
+- Prérequis des étudiants : [prérequis]
+- Contraintes matérielles : [salle classique / amphi / salle informatique]
+
+Structure attendue :
+1. Objectifs pédagogiques formulés avec les verbes de la taxonomie de Bloom (minimum 3 objectifs de niveaux différents)
+2. Plan séquencé avec minutage précis
+3. Activités d'apprentissage actif intégrées (au minimum 2)
+4. Moment de vérification de la compréhension en cours de séance
+5. Évaluation formative de fin de séance
+
+Adapte les exemples au contexte tunisien quand c'est pertinent.</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ باحث ذو خبرة في [التخصص] بجامعة تونسية. ابنِ مخططًا مفصلًا لدرس مدته [المدة] حول الموضوع التالي: [الموضوع].
+
+السياق:
+- الجمهور: طلبة [المستوى: السنة الأولى/الثانية/الثالثة/ماجستير]
+- العدد: حوالي [العدد] طالبًا
+- المتطلبات المسبقة للطلبة: [المتطلبات]
+- القيود المادية: [قاعة عادية / مدرج / قاعة إعلامية]
+
+البنية المطلوبة:
+1. الأهداف البيداغوجية مصاغة بأفعال تصنيف بلوم (ثلاثة أهداف على الأقل من مستويات مختلفة)
+2. مخطط متسلسل بتوقيت دقيق
+3. أنشطة تعلم نشط مدمجة (نشاطان على الأقل)
+4. لحظة تحقق من الفهم أثناء الحصة
+5. تقييم تكويني في نهاية الحصة
+
+كيّف الأمثلة مع السياق التونسي عند الاقتضاء.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 6 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">6 · Générer un QCM différencié (Bloom)</span>
+      <span class="prompt-use">Évaluation</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant universitaire en [discipline]. Génère un QCM de 15 questions pour évaluer la maîtrise des étudiants sur [sujet/chapitre].
+
+Consignes :
+- Répartir les questions par niveau de Bloom : 5 questions de mémorisation/compréhension, 5 questions d'application, 5 questions d'analyse
+- Fournir 4 propositions par question avec une seule bonne réponse
+- Indiquer la bonne réponse et la justification après chaque question
+- Adapter les exemples au contexte tunisien (cas, institutions, entreprises locales)
+- Varier les formulations : question directe, cas pratique, énoncé à compléter
+
+Public : étudiants en [niveau] ayant suivi [précision sur les contenus].
+Points forts habituels : [préciser].
+Points faibles habituels : [préciser].</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ جامعي في [التخصص]. أنشئ اختبارًا متعدد الخيارات من 15 سؤالًا لتقييم تمكّن الطلبة من [الموضوع/الفصل].
+
+التعليمات:
+- توزيع الأسئلة حسب مستويات بلوم: 5 أسئلة للحفظ/الفهم، 5 أسئلة للتطبيق، 5 أسئلة للتحليل
+- تقديم 4 اقتراحات لكل سؤال مع إجابة صحيحة واحدة
+- الإشارة إلى الإجابة الصحيحة والتعليل بعد كل سؤال
+- تكييف الأمثلة مع السياق التونسي (حالات، مؤسسات، شركات محلية)
+- تنويع الصياغات: سؤال مباشر، حالة عملية، نص يتمم
+
+الجمهور: طلبة [المستوى] درسوا [تفاصيل المحتوى].
+نقاط القوة المعتادة: [حدّد].
+نقاط الضعف المعتادة: [حدّد].</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 7 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">7 · Produire une rétroaction sur un travail étudiant</span>
+      <span class="prompt-use">Correction</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant universitaire bienveillant mais exigeant en [discipline]. Je vais te fournir un extrait de travail étudiant. Produis une rétroaction structurée selon le modèle suivant :
+
+1. Ce qui fonctionne bien (2 à 3 points précis, pas de flatterie)
+2. Ce qui doit être amélioré (2 à 3 points concrets avec indication du chemin à prendre)
+3. Une question ouverte pour faire réfléchir l'étudiant
+4. Une ressource complémentaire pertinente (article, chapitre, auteur)
+
+Ton : respectueux, direct, sans infantilisation. Niveau d'exigence correspondant à un étudiant de [niveau].
+
+Voici l'extrait à corriger :
+[coller le texte de l'étudiant]</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ جامعي ودود ومتطلب في [التخصص]. سأزودك بمقتطف من عمل طالب. أنتج تغذية راجعة منظمة وفق النموذج التالي:
+
+1. ما يسير جيدًا (نقطتان إلى ثلاث نقاط دقيقة، لا مجاملات)
+2. ما يحتاج إلى تحسين (نقطتان إلى ثلاث نقاط ملموسة مع توضيح المسار الواجب اتخاذه)
+3. سؤال مفتوح يُفكّر الطالب
+4. مورد تكميلي ذو صلة (مقال، فصل، مؤلف)
+
+الأسلوب: محترم، مباشر، دون تصغير. مستوى الاشتراطات يتناسب مع طالب [المستوى].
+
+إليك المقتطف المراد تصحيحه:
+[الصق نص الطالب]</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 8 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">8 · Transformer un cours dense en fiche de révision</span>
+      <span class="prompt-use">Support étudiant</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es concepteur pédagogique. À partir du chapitre de cours suivant, produis une fiche de révision destinée à des étudiants de [niveau] en [discipline].
+
+Structure :
+1. Les 5 concepts clés à retenir (une phrase chacun)
+2. Un schéma conceptuel en texte structuré (hiérarchie à 3 niveaux)
+3. Les 3 définitions à connaître par cœur
+4. 5 questions flash pour s'auto-tester
+5. Un piège à éviter fréquent chez les étudiants sur ce chapitre
+6. Une phrase mémo pour retenir l'essentiel
+
+Contraintes : langue accessible, éviter le jargon non essentiel, une page maximum.
+
+Voici le chapitre :
+[coller le contenu]</div>
+    <div class="prompt-body" lang="ar">أنت مصمم بيداغوجي. انطلاقًا من فصل الدرس التالي، أنتج بطاقة مراجعة موجهة لطلبة [المستوى] في [التخصص].
+
+البنية:
+1. المفاهيم الخمسة الأساسية الواجب استيعابها (جملة واحدة لكل منها)
+2. مخطط مفاهيمي في نص منظم (تسلسل هرمي من 3 مستويات)
+3. التعاريف الثلاثة الواجب حفظها عن ظهر قلب
+4. 5 أسئلة سريعة للاختبار الذاتي
+5. فخ شائع يقع فيه الطلبة في هذا الفصل
+6. جملة تذكيرية لحفظ الأساسي
+
+القيود: لغة ميسّرة، تجنب المصطلحات غير الضرورية، صفحة واحدة كحد أقصى.
+
+إليك الفصل:
+[الصق المحتوى]</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 9 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">9 · Générer une étude de cas ancrée en Tunisie</span>
+      <span class="prompt-use">Activité active</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es enseignant-chercheur en [discipline]. Construis une étude de cas originale pour une séance de TD avec des étudiants de [niveau].
+
+Ancrage : la situation doit se dérouler dans le contexte tunisien (entreprise, institution, territoire, actualité). Utiliser des noms propres crédibles (entreprise fictive mais plausible, région existante, secteur économique réel tunisien).
+
+Structure de l'étude de cas :
+1. Présentation du contexte (200 mots)
+2. Exposé de la situation problématique (150 mots)
+3. Données chiffrées ou documents à exploiter (crédibles, sans inventer de sources vérifiables)
+4. Trois questions progressives à traiter par les étudiants
+5. Grille de critères d'évaluation pour le correcteur
+
+Thème ciblé : [préciser].
+Compétences à mobiliser : [préciser].</div>
+    <div class="prompt-body" lang="ar">أنت أستاذ باحث في [التخصص]. ابنِ دراسة حالة أصلية لحصة أعمال موجهة مع طلبة [المستوى].
+
+الإرساء: يجب أن تدور الوضعية في السياق التونسي (مؤسسة، إدارة، جهة، راهنية). استعمل أسماء علم موثوقة (مؤسسة خيالية لكن ممكنة، جهة موجودة، قطاع اقتصادي تونسي حقيقي).
+
+بنية دراسة الحالة:
+1. تقديم السياق (200 كلمة)
+2. عرض الوضعية الإشكالية (150 كلمة)
+3. معطيات رقمية أو وثائق للاستغلال (موثوقة، دون اختراع مصادر قابلة للتحقق)
+4. ثلاثة أسئلة متدرجة يعالجها الطلبة
+5. شبكة معايير التقييم للمصحح
+
+الموضوع المستهدف: [حدّد].
+الكفاءات المطلوب تعبئتها: [حدّد].</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 10 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">10 · Reformuler un concept pour étudiants débutants</span>
+      <span class="prompt-use">Clarification</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es vulgarisateur pédagogique expérimenté. Reformule le concept suivant pour des étudiants de première année qui découvrent la [discipline].
+
+Concept : [concept à expliquer]
+
+Consignes :
+1. Commencer par une analogie concrète tirée de la vie quotidienne tunisienne (marché hebdomadaire, transport, famille, commerce)
+2. Donner la définition technique précise
+3. Illustrer avec un exemple simple puis un exemple plus avancé
+4. Anticiper deux confusions fréquentes chez les débutants
+5. Proposer une formule mnémotechnique pour retenir l'essentiel
+
+Longueur : 300 mots maximum. Ton : clair sans être condescendant.</div>
+    <div class="prompt-body" lang="ar">أنت خبير في التبسيط البيداغوجي. أعد صياغة المفهوم التالي لطلبة السنة الأولى الذين يكتشفون [التخصص].
+
+المفهوم: [المفهوم المراد شرحه]
+
+التعليمات:
+1. البدء بمقارنة ملموسة من الحياة اليومية التونسية (السوق الأسبوعي، النقل، العائلة، التجارة)
+2. تقديم التعريف التقني الدقيق
+3. التوضيح بمثال بسيط ثم مثال أكثر تقدمًا
+4. استباق التباسين متكررين لدى المبتدئين
+5. اقتراح صيغة تذكيرية لحفظ الأساسي
+
+الطول: 300 كلمة كحد أقصى. الأسلوب: واضح دون استعلاء.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 11 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">11 · Concevoir une activité d'ouverture de séance</span>
+      <span class="prompt-use">Pédagogie active</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es ingénieur pédagogique spécialisé en enseignement supérieur. Propose trois activités différentes d'ouverture de séance (5 à 10 minutes chacune) pour capter l'attention des étudiants et activer leurs connaissances préalables.
+
+Contexte :
+- Cours : [intitulé]
+- Chapitre du jour : [chapitre]
+- Niveau : [L1/L2/L3/Master]
+- Effectif : [nombre]
+- Salle : [amphi / salle TD / en ligne]
+
+Pour chaque activité, préciser :
+- Objectif cognitif visé
+- Déroulé minuté
+- Matériel requis
+- Transition vers le contenu du cours
+- Variante possible si peu de temps
+
+Privilégier des activités qui fonctionnent avec des effectifs nombreux sans matériel sophistiqué.</div>
+    <div class="prompt-body" lang="ar">أنت مهندس بيداغوجي متخصص في التعليم العالي. اقترح ثلاثة أنشطة مختلفة لافتتاح حصة (من 5 إلى 10 دقائق لكل نشاط) لجذب انتباه الطلبة وتنشيط معارفهم المسبقة.
+
+السياق:
+- المادة: [العنوان]
+- فصل اليوم: [الفصل]
+- المستوى: [سنة أولى/ثانية/ثالثة/ماجستير]
+- العدد: [العدد]
+- القاعة: [مدرج / قاعة أعمال موجهة / عن بعد]
+
+لكل نشاط، حدد:
+- الهدف المعرفي المقصود
+- السير المضبوط زمنيًا
+- المواد المطلوبة
+- الانتقال إلى محتوى الدرس
+- بديل ممكن عند ضيق الوقت
+
+تفضيل الأنشطة التي تعمل مع أعداد كبيرة دون معدات متطورة.</div>
+    <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
+  </div>
+
+  <!-- Library Prompt 12 -->
+  <div class="prompt-card">
+    <div class="prompt-header">
+      <span class="prompt-title">12 · Analyser la qualité d'un sujet d'examen</span>
+      <span class="prompt-use">Qualité pédagogique</span>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang(this, 'fr')">Français</button>
+      <button class="lang-btn" onclick="switchLang(this, 'ar')">العربية</button>
+    </div>
+    <div class="prompt-body active" lang="fr">Tu es expert en docimologie (science de l'évaluation). Analyse le sujet d'examen suivant selon quatre axes :
+
+1. Validité de contenu : couvre-t-il réellement les apprentissages visés ?
+2. Niveau cognitif sollicité (Bloom) : équilibre entre les niveaux
+3. Clarté des consignes : risques d'ambiguïté ?
+4. Difficulté perçue : adaptée au niveau [préciser] ?
+
+Pour chaque axe, indiquer :
+- Diagnostic (forces / faiblesses)
+- Suggestion d'amélioration concrète et formulée
+
+Terminer par une version révisée du sujet si nécessaire.
+
+Voici le sujet à analyser :
+[coller le sujet]</div>
+    <div class="prompt-body" lang="ar">أنت خبير في علم التقويم. حلل موضوع الامتحان التالي وفق أربعة محاور:
+
+1. صدق المحتوى: هل يغطي فعلًا التعلمات المستهدفة؟
+2. المستوى المعرفي المطلوب (بلوم): التوازن بين المستويات
+3. وضوح التعليمات: مخاطر الالتباس؟
+4. الصعوبة المدركة: ملائمة للمستوى [حدّد]؟
+
+لكل محور، اذكر:
+- التشخيص (نقاط القوة / الضعف)
+- اقتراح تحسين ملموس ومصاغ
+
+اختم بنسخة منقحة من الموضوع إذا لزم الأمر.
+
+إليك الموضوع المطلوب تحليله:
+[الصق الموضوع]</div>
     <button class="copy-btn" onclick="copyPrompt(this)">Copier ce prompt</button>
   </div>
 
