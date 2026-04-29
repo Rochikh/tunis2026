@@ -238,6 +238,33 @@
     color: var(--muted);
     font-size: 0.88rem;
   }
+  .defi-prompt-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.9rem;
+    margin-top: 0.9rem;
+  }
+  .defi-prompt-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--j2);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+  .defi-prompt-content {
+    font-family: "Courier New", monospace;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: #3A3A3A;
+    background: #FCFAF6;
+    padding: 0.8rem;
+    border-radius: 4px;
+    white-space: pre-wrap;
+    margin: 0;
+    overflow-x: auto;
+  }
 
   .tools-grid {
     display: grid;
@@ -735,23 +762,42 @@
       <span class="duree">15 min</span>
     </div>
     <div class="programme-item">
-      <span class="horaire">14h00 - 14h20</span>
-      <span class="intitule">Défi 1 · Trouve les 3 erreurs</span>
-      <span class="duree">20 min</span>
+      <span class="horaire">14h00 - 14h25</span>
+      <span class="intitule">Défi 1 · Piège tes collègues, démasque les autres</span>
+      <span class="duree">25 min</span>
     </div>
     <div class="activity-detail" style="border-left-color: var(--j2);">
       <div class="activity-detail-title" style="color: var(--j2);">Défi 1</div>
-      <p class="activity-detail-intro">Un texte produit par IA contient 3 erreurs subtiles. À vous de les trouver.</p>
+      <p class="activity-detail-intro">Vous allez produire vous-même un texte piégé dans votre discipline, puis chercher les erreurs glissées par vos collègues dans leurs propres textes.</p>
       <ol class="activity-questions">
-        <li><strong>5 minutes</strong> en individuel pour les identifier</li>
-        <li><strong>10 minutes</strong> en binôme pour confronter vos hypothèses</li>
-        <li><strong>5 minutes</strong> de débriefing collectif</li>
+        <li><strong>10 minutes</strong> · Production : copiez le prompt ci-dessous dans Claude ou ChatGPT, adaptez-le à votre discipline, déposez le texte produit sur Padlet (colonne « Défi 1 — Textes piégés »).</li>
+        <li><strong>10 minutes</strong> · Détection : explorez les textes des autres participants sur Padlet, choisissez 2 textes (idéalement d'une discipline différente de la vôtre), déposez vos commentaires pour identifier les 3 erreurs glissées.</li>
+        <li><strong>5 minutes</strong> · Débriefing collectif sur les erreurs les plus difficiles à détecter.</li>
       </ol>
+      <p class="activity-detail-note"><strong>Deux récompenses possibles :</strong> le texte le plus piégeur (le moins détecté) et le détecteur le plus fin (qui a trouvé le plus d'erreurs).</p>
+
+      <div class="defi-prompt-box">
+        <div class="defi-prompt-label">Prompt à copier dans Claude ou ChatGPT</div>
+        <pre class="defi-prompt-content">Tu es un étudiant de [niveau, par exemple L2] qui a utilisé l'IA pour rédiger un paragraphe de 150 mots sur [sujet de ma discipline, par exemple les énergies renouvelables en Tunisie].
+
+Le paragraphe doit sembler bien rédigé, structuré et confiant. Mais glisse-y intentionnellement 3 erreurs subtiles caractéristiques de l'IA :
+
+1. Une hallucination factuelle : un chiffre inventé qui sonne crédible, ou une date qui semble plausible mais qui est fausse, ou un nom propre qui n'existe pas
+
+2. Un raisonnement creux : une phrase qui paraît logique mais qui ne tient pas si on la regarde de près (faux lien de cause à effet, généralisation abusive, conclusion qui ne suit pas)
+
+3. Une référence inventée : citer un auteur, une étude ou un rapport qui semble exister mais qui est imaginaire
+
+Important : ne signale pas les erreurs dans ta réponse. Le paragraphe doit pouvoir tromper un lecteur pressé. Garde un ton neutre, académique, sans drapeaux rouges évidents.
+
+Donne-moi à la fin la liste des 3 erreurs que tu as glissées, dans un encadré séparé que je supprimerai avant de partager le texte avec mes collègues.</pre>
+        <button class="copy-btn" onclick="copyDefiPrompt(this)" style="margin: 0.6rem 0 0 0;">Copier ce prompt</button>
+      </div>
     </div>
     <div class="programme-item">
-      <span class="horaire">14h20 - 14h50</span>
+      <span class="horaire">14h25 - 14h50</span>
       <span class="intitule">Défi 2 · Le meilleur prompt pour mes étudiants</span>
-      <span class="duree">30 min</span>
+      <span class="duree">25 min</span>
     </div>
     <div class="activity-detail" style="border-left-color: var(--j2);">
       <div class="activity-detail-title" style="color: var(--j2);">Défi 2</div>
@@ -1437,6 +1483,20 @@ Voici le sujet à analyser :
     const card = btn.closest('.prompt-card');
     const activeBody = card.querySelector('.prompt-body.active');
     const text = activeBody.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.textContent;
+      btn.textContent = "Copié !";
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 2000);
+    });
+  }
+
+  function copyDefiPrompt(btn) {
+    const box = btn.closest('.defi-prompt-box');
+    const text = box.querySelector('.defi-prompt-content').textContent;
     navigator.clipboard.writeText(text).then(() => {
       const original = btn.textContent;
       btn.textContent = "Copié !";
